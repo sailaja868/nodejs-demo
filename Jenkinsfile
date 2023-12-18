@@ -12,7 +12,7 @@ pipeline {
 
         stage('Build docker image') {
             steps {  
-                sh 'docker build -t sailaja868/nodeapp:$BUILD_NUMBER .'
+                sh 'docker build -t valaxy/nodeapp:$BUILD_NUMBER .'
             }
         }
         stage('login to dockerhub') {
@@ -22,7 +22,7 @@ pipeline {
         }
         stage('push image') {
             steps{
-                sh 'docker push sailaja868/nodeapp:$BUILD_NUMBER'
+                sh 'docker push valaxy/nodeapp:$BUILD_NUMBER'
             }
         }
 }

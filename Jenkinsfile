@@ -1,7 +1,7 @@
 pipeline {
     agent any 
     environment {
-    DOCKERHUB_CREDENTIALS = credentials('valaxy-docker')
+    DOCKERHUB_CREDENTIALS = credentials('sailaja868-dockerhub')
     }
     stages { 
         stage('SCM Checkout') {
@@ -12,7 +12,7 @@ pipeline {
 
         stage('Build docker image') {
             steps {  
-                sh 'docker build -t naveenyadav4566/nodeapp:$BUILD_NUMBER .'
+                sh 'docker build -t sailaja868/nodeapp:$BUILD_NUMBER .'
             }
         }
         stage('login to dockerhub') {
